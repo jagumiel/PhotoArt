@@ -47,6 +47,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -212,10 +214,29 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
-    <Compile Include="Controllers\ControladorRegistro.vb" />
+    <Compile Include="Controllers\UserController.vb" />
+    <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloRegistro.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloRegistro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloRegistro.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloRegistro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloRegistro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloRegistro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuarios.vb">
+      <DependentUpon>ModeloRegistro.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -245,6 +266,24 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\ModeloRegistro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloRegistro.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Images\Foto_Perfil\defaultIcon.png" />
+    <Content Include="Models\ModeloRegistro.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloRegistro.edmx</DependentUpon>
+      <LastGenOutput>ModeloRegistro.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModeloRegistro.edmx.diagram">
+      <DependentUpon>ModeloRegistro.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModeloRegistro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloRegistro.edmx</DependentUpon>
+      <LastGenOutput>ModeloRegistro.vb</LastGenOutput>
+    </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -328,7 +367,10 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Views\Home\Registro.aspx" />
+    <Content Include="Views\Usuario\Login.aspx" />
+    <Content Include="Views\Usuario\RegErr.aspx" />
+    <Content Include="Views\Usuario\Registro.aspx" />
+    <Content Include="Views\Usuario\RegOk.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -370,6 +412,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaDeFunciones\BibliotecaDeFunciones.vbproj">
+      <Project>{93044aa1-1ab5-4367-bd11-de15f0cfd91d}</Project>
+      <Name>BibliotecaDeFunciones</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

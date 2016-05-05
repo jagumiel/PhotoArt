@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhotoArtModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PhotoArtModelStoreContainer">
+    <EntitySet Name="Usuarios" EntityType="PhotoArtModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="email" />
+    </Key>
+    <Property Name="nick" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="pass" Type="nvarchar" MaxLength="150" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="rol" Type="nvarchar" MaxLength="50" />
+    <Property Name="confirmado" Type="int" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="apellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="pregunta" Type="nvarchar" MaxLength="50" />
+    <Property Name="respuesta" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha_reg" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="avatar" Type="nvarchar" MaxLength="200" />
+    <Property Name="baja" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

@@ -7,7 +7,7 @@
     <% End Using %>
 <% Else %>
     <ul>
-        <li><%: Html.ActionLink("Registrarse", "Register", "Account", routeValues:=Nothing, htmlAttributes:=New With {.id = "registerLink" }) %></li>
-        <li><%: Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues:=Nothing, htmlAttributes:=New With {.id = "loginLink" }) %></li>
+        <li><%: Html.ActionLink("Registrarse", "Registro", "Usuario", routeValues:=Nothing, htmlAttributes:=New With {.id = "registerLink"})%></li>
+        <li><%: Html.ActionLink("Iniciar sesión", "Login", "Usuario", routeValues:=Nothing, htmlAttributes:=New With {.id = "loginLink"})%></li>
     </ul>
 <% End If %>

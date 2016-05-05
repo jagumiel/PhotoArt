@@ -19,9 +19,5 @@
         Return View()
     End Function
 
-    Function Registro() As ActionResult
-        ViewData("Message") = "Crea una cuenta y empieza a compartir imágenes."
 
-        Return View()
-    End Function
 End Class

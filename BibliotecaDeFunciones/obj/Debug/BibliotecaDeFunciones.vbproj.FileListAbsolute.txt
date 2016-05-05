@@ -1,0 +1,8 @@
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\bin\Debug\BibliotecaDeFunciones.dll
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\bin\Debug\BibliotecaDeFunciones.pdb
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\bin\Debug\BibliotecaDeFunciones.xml
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\obj\Debug\BibliotecaDeFunciones.Resources.resources
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\obj\Debug\BibliotecaDeFunciones.vbproj.GenerateResource.Cache
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\obj\Debug\BibliotecaDeFunciones.dll
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\obj\Debug\BibliotecaDeFunciones.xml
+C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\BibliotecaDeFunciones\obj\Debug\BibliotecaDeFunciones.pdb
