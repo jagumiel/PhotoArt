@@ -32,6 +32,7 @@
     <HttpPost()> _
     Function Registro(ByVal miUser As Usuarios) As ActionResult
         Try
+            miUser.baja = "no"
             m.Usuarios.Add(miUser)
             m.SaveChanges()
             'Se podría enviar un mail de confirmación, pero le enviamos por ahora a la página de Login
@@ -54,20 +55,31 @@
             Dim pass As String = miUser.pass
             Dim rol As String
             If (logicaUsuario.iniciarSesion(email, pass)) Then
+                Session("Email") = email
+                Session("Nick") = logicaUsuario.obtenerNick(email)
                 '¿Socio o Admin?
                 rol = logicaUsuario.obtenerRol(email)
                 If (String.Equals(rol, "admin")) Then
                     'Hacer admin (Redirigir a página admin)
+                    Session("Rol") = "admin"
+                    Return RedirectToAction("Index", "Admin")
                 Else
                     'Hacer socio (Redirigir a página socio)
+                    Session("Rol") = "socio"
+                    Return RedirectToAction("Index", "Socio")
                 End If
-                Return RedirectToAction("RegOk") 'PROVISIONAL!!!
             Else
                 Return RedirectToAction("RegErr")
             End If
         Catch ex As Exception
             Return RedirectToAction("RegErr")
         End Try
+    End Function
+
+
+    Function Logout() As ActionResult
+        Session.RemoveAll()
+        Return RedirectToAction("Index", "Home")
     End Function
 
     '

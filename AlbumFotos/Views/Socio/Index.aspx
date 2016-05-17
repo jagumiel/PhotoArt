@@ -1,20 +1,24 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-RegErr
+Index
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <hgroup class="title">
-        <h1>Registro fallido.</h1>
-        <h2><%: ViewData("Message") %></h2>
+        <h1>Área de Socios.</h1>
+        <h3>Menú del socio:</h3>
+        <p>&nbsp;</p>
     </hgroup>
 
-    <p>&nbsp;</p>
-    <p>Algo fue mal. Puedes volver a intentar registrarte, o ir directamente a iniciar sesión si ya tienes una cuenta.</p>
-    <p><a href="Registro">Crear una cuenta</a></p>
-    <p><a href="Login">Ir a Login</a></p>
+    <Ul>
+        <li><a href="Socio/MisAlbumes">Mis Álbumes</a></li>
+        <li><a href="Socio/FormNuevoAlbum">Crear un nuevo álbum</a></li>
+        <li>Explorar álbumes</li>
+    </Ul>
+
+    <!--Si es administrador que aparezca un enlace para ir al panel de administración.-->
 
 </asp:Content>
 

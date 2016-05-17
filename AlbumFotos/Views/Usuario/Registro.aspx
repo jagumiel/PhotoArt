@@ -79,13 +79,18 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(Function(model) model.avatar) %>
-            <%: Html.ValidationMessageFor(Function(model) model.avatar) %>
+            <div class="editor-field">
+            <input name="ImageUploaded" type="file">  
         </div>
+        </div>
+
+        
 
         <p>
             <input type="submit" value="Create" />
         </p>
-    </fieldset>
+    </fieldset> 
+
 <% End Using %>
 
 <div>

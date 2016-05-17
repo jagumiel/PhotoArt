@@ -214,11 +214,31 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\AdminController.vb" />
+    <Compile Include="Controllers\SocioController.vb" />
     <Compile Include="Controllers\UserController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Albumes.vb">
+      <DependentUpon>ModeloAlbum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloAlbum.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloAlbum.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloAlbum.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloAlbum.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloAlbum.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloAlbum.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModeloRegistro.Context.vb">
       <AutoGen>True</AutoGen>
@@ -283,6 +303,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloRegistro.edmx</DependentUpon>
       <LastGenOutput>ModeloRegistro.vb</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ModeloAlbum.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloAlbum.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModeloAlbum.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloAlbum.edmx</DependentUpon>
+      <LastGenOutput>ModeloAlbum.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModeloAlbum.edmx.diagram">
+      <DependentUpon>ModeloAlbum.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModeloAlbum.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloAlbum.edmx</DependentUpon>
+      <LastGenOutput>ModeloAlbum.vb</LastGenOutput>
     </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -349,6 +386,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="packages.config" />
+    <Content Include="Views\Socio\SubirFoto.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -367,7 +405,16 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Admin\AdministrarUsuarios.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
+    <Content Include="Views\Socio\Denegado.aspx" />
+    <Content Include="Views\Socio\Details.aspx" />
+    <Content Include="Views\Socio\FormNuevoAlbum.aspx" />
+    <Content Include="Views\Socio\Index.aspx" />
+    <Content Include="Views\Socio\MisAlbumes.aspx" />
+    <Content Include="Views\Socio\VerAlbum.aspx" />
     <Content Include="Views\Usuario\Login.aspx" />
+    <Content Include="Views\Usuario\Logout.aspx" />
     <Content Include="Views\Usuario\RegErr.aspx" />
     <Content Include="Views\Usuario\Registro.aspx" />
     <Content Include="Views\Usuario\RegOk.aspx" />

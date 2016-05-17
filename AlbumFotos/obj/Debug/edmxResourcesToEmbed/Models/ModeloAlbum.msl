@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhotoArtModelT_AlbumStoreContainer" CdmEntityContainer="PhotoArtEntitiesT_Album">
+    <EntitySetMapping Name="Albumes">
+      <EntityTypeMapping TypeName="PhotoArtModelT_Album.Albumes">
+        <MappingFragment StoreEntitySet="Albumes">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="nick" ColumnName="nick" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="acceso" ColumnName="acceso" />
+          <ScalarProperty Name="portada" ColumnName="portada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

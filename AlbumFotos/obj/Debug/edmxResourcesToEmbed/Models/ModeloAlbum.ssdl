@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhotoArtModelT_Album.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PhotoArtModelT_AlbumStoreContainer">
+    <EntitySet Name="Albumes" EntityType="PhotoArtModelT_Album.Store.Albumes" store:Type="Tables" store:Schema="dbo" store:Name="Albumes">
+      <DefiningQuery>SELECT 
+      [Albumes].[Codigo] AS [Codigo], 
+      [Albumes].[nick] AS [nick], 
+      [Albumes].[nombre] AS [nombre], 
+      [Albumes].[acceso] AS [acceso], 
+      [Albumes].[portada] AS [portada], 
+      [Albumes].[fecha] AS [fecha]
+      FROM [dbo].[Albumes] AS [Albumes]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'PhotoArt.dbo.Albumes' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Albumes">
+    <Key>
+      <PropertyRef Name="Codigo" />
+      <PropertyRef Name="nick" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="acceso" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nick" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="acceso" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="portada" Type="nvarchar" MaxLength="200" />
+    <Property Name="fecha" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

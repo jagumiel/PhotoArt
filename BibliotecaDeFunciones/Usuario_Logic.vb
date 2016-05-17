@@ -38,7 +38,8 @@ Public Class Usuario_Logic
     End Function
 
     Function iniciarSesion(email As String, pass As String) As Boolean
-        Dim passCifrada As String = hashearPass(md5Hash, pass)
+        'Dim passCifrada As String = hashearPass(md5Hash, pass)
+        Dim passCifrada As String = pass 'No está hasheada, el hash se hace en la línea anterior que está comentada
         Dim miQuery As String = "Select email from Usuarios where email='" & email & "' and pass ='" & passCifrada & "';"
         Try
             Dim miLectura As SqlDataReader
@@ -82,6 +83,23 @@ Public Class Usuario_Logic
             'No se ha podido obtener un resultado.
         End Try
         Return rol
+    End Function
+
+
+    Function obtenerNick(email As String) As String
+        misFuncionesBD.abrirConexion()
+        Dim miQuery As String = "Select nick from Usuarios where email='" & email & "';"
+        Dim nick As String = "N/A"
+        Try
+            Dim miLectura As SqlDataReader
+            miLectura = misFuncionesBD.obtenerQuery(miQuery)
+            While (miLectura.Read)
+                nick = miLectura("nick")
+            End While
+        Catch ex As Exception
+            'No se ha podido obtener el nick.
+        End Try
+        Return nick
     End Function
 
 End Class

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PhotoArtModelT_Album.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PhotoArtModelT_AlbumStoreContainer">
+          <EntitySet Name="Albumes" EntityType="PhotoArtModelT_Album.Store.Albumes" store:Type="Tables" store:Schema="dbo" store:Name="Albumes">
+            <DefiningQuery>SELECT 
+      [Albumes].[Codigo] AS [Codigo], 
+      [Albumes].[nick] AS [nick], 
+      [Albumes].[nombre] AS [nombre], 
+      [Albumes].[acceso] AS [acceso], 
+      [Albumes].[portada] AS [portada], 
+      [Albumes].[fecha] AS [fecha]
+      FROM [dbo].[Albumes] AS [Albumes]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'PhotoArt.dbo.Albumes' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+        <EntityType Name="Albumes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="nick" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="acceso" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nick" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="acceso" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="portada" Type="nvarchar" MaxLength="200" />
+          <Property Name="fecha" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhotoArtModelT_Album" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PhotoArtEntitiesT_Album" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Albumes" EntityType="PhotoArtModelT_Album.Albumes" />
+        </EntityContainer>
+        <EntityType Name="Albumes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="nick" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="acceso" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nick" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="acceso" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="portada" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PhotoArtModelT_AlbumStoreContainer" CdmEntityContainer="PhotoArtEntitiesT_Album">
+          <EntitySetMapping Name="Albumes">
+            <EntityTypeMapping TypeName="PhotoArtModelT_Album.Albumes">
+              <MappingFragment StoreEntitySet="Albumes">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="acceso" ColumnName="acceso" />
+                <ScalarProperty Name="portada" ColumnName="portada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -14,7 +14,7 @@ Login
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <form id="form1" runat="server">
+<form id="form1" runat="server">
 <h2>Login</h2>
         <p><table width="auto" border="1" align="center">
   <tr>
@@ -54,8 +54,7 @@ Login
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="FeaturedContent" runat="server">
-    <p>
-        Hola, esto es el Login.</p>
+
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptsSection" runat="server">

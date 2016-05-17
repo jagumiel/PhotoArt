@@ -45,7 +45,7 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; <%: DateTime.Now.Year %> - Site.Master Album de Fotos.</p>
+                    <p>&copy; <%: DateTime.Now.Year %> - PhotoArt.</p>
                 </div>
             </div>
         </footer>

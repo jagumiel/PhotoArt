@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhotoArtModelT_Album" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PhotoArtEntitiesT_Album" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Albumes" EntityType="PhotoArtModelT_Album.Albumes" />
+  </EntityContainer>
+  <EntityType Name="Albumes">
+    <Key>
+      <PropertyRef Name="Codigo" />
+      <PropertyRef Name="nick" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="acceso" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nick" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="acceso" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="portada" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>
