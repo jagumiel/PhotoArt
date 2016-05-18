@@ -25,7 +25,7 @@ VerAlbum
         </p>
         <Ul>
         <li><a href="MisAlbumes">Mis Álbumes</a></li>
-        <li><a href="SubirFoto">Subir una nueva fotografía</a></li>
+        <li><a href="InsertarFoto">Subir una nueva fotografía</a></li>
         <li>Explorar álbumes</li>
     </Ul>
 

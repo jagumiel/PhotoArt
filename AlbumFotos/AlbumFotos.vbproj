@@ -216,7 +216,6 @@
     <Compile Include="App_Start\WebApiConfig.vb" />
     <Compile Include="Controllers\AdminController.vb" />
     <Compile Include="Controllers\SocioController.vb" />
-    <Compile Include="Controllers\UserController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.vb" />
     <Compile Include="Global.asax.vb">
@@ -273,7 +272,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Models\AccountModels.vb" />
   </ItemGroup>
@@ -386,6 +384,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="packages.config" />
+    <Content Include="Views\Socio\InsertarFoto.aspx" />
     <Content Include="Views\Socio\SubirFoto.vbhtml" />
   </ItemGroup>
   <ItemGroup>
@@ -440,15 +439,6 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="Views\Account\_ChangePasswordPartial.aspx" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.aspx" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.aspx" />
-    <Content Include="Views\Account\_SetPasswordPartial.aspx" />
-    <Content Include="Views\Account\Login.aspx" />
-    <Content Include="Views\Account\Manage.aspx" />
-    <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Account\ExternalLoginFailure.aspx" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Contact.aspx" />
     <Content Include="Views\Home\Index.aspx" />
@@ -459,6 +449,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Albumes\Limitado\" />
+    <Folder Include="Images\Albumes\Privado\" />
+    <Folder Include="Images\Albumes\Publico\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BibliotecaDeFunciones\BibliotecaDeFunciones.vbproj">

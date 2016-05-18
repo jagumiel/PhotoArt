@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Security.AccessControl
 
 Public Class SocioController
     Inherits System.Web.Mvc.Controller
@@ -179,6 +180,39 @@ Public Class SocioController
 
     Function VerAlbum() As ActionResult
         Return View()
+    End Function
+
+    Function InsertarFoto() As ActionResult
+        Return View()
+    End Function
+
+    Function GuardarFoto(ByVal f As HttpPostedFileBase) As ActionResult
+        Dim miRuta As String = "~/Images/Albumes/"
+        Dim miUsuario As String = CType(Session.Item("Nick"), String)
+        Dim miAlbum As String = CType(Session.Item("Album"), String)
+        Dim miTipoAcceso As String = logicaAlbum.obtenerTipoAcceso(miUsuario, miAlbum)
+        If (String.Equals(miTipoAcceso, "Privado")) Then
+            miRuta = "~/Images/Albumes/Privado/"
+        ElseIf (String.Equals(miTipoAcceso, "Limitado")) Then
+            miRuta = "~/Images/Albumes/Limitado/"
+        ElseIf (String.Equals(miTipoAcceso, "Publico")) Then
+            miRuta = "~/Images/Albumes/Publico/"
+        End If
+        'Dim miRuta As String = "C:\Users\JoseÁngel\Documents\Visual Studio 2012\Projects\AlbumFotos\AlbumFotos\Images" + miUsuario + "\" + miAlbum + "\"
+        'Dim miRuta As String = "~/Images/Albumes/" + miTipoAcceso + "/" + miUsuario + "/" + miAlbum + "/"
+        'Dim miRuta As String = "~/Images/Albumes/" + miUsuario + "/" + miAlbum + "/"
+        'Dim miRuta As String = "~/Images/Albumes/"
+        'Dim securityRules As DirectorySecurity = New DirectorySecurity()
+        'securityRules.AddAccessRule(New FileSystemAccessRule("*", FileSystemRights.Write, AccessControlType.Allow))
+        'securityRules.AddAccessRule(New FileSystemAccessRule("~/Images/", FileSystemRights.FullControl, AccessControlType.Allow))
+        'If (Not System.IO.Directory.Exists(miRuta)) Then
+        'System.IO.Directory.CreateDirectory(miRuta)
+        'End If
+        Dim archivo As String = (DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + f.FileName)
+        f.SaveAs(Server.MapPath(miRuta + archivo))
+        logicaFoto.AgregarFoto(miUsuario, miRuta + archivo, miAlbum)
+        MsgBox("Foto subida correctamente", MsgBoxStyle.SystemModal)
+        Response.Redirect("/Socio/InsertarFoto")
     End Function
 
 End Class

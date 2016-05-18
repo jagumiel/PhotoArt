@@ -3,8 +3,17 @@
 
     Function Index() As ActionResult
         ViewData("Message") = "Tus recuerdos ahora online."
+        If Session("Rol") Is Nothing Then
+            Return View()
+        Else
+            Dim miRol = CType(Session.Item("Rol"), String)
+            If (String.Equals(miRol, "admin")) Then
+                Return RedirectToAction("../Admin/Index")
+            Else
+                Return RedirectToAction("../Socio/Index")
+            End If
+        End if
 
-        Return View()
     End Function
 
     Function About() As ActionResult
