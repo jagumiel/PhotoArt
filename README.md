@@ -13,6 +13,7 @@ You can clone this repository and open the _AlbumFotos.sln_ file. You will need 
 
 ## Authors
 **[EN]** You may be intered in visiting the authors repositories, you can find them in the following links:
+
 **[ES]** Quizás te interese visitar otros repositorios de los autores, puedes encontrarlos en los siguientes enlaces:
 - [BegoMdeMM](https://github.com/BegoMdeMM)
 - [jagumiel](https://github.com/jagumiel)
